@@ -1,0 +1,137 @@
+{
+    "noir_version": "1.0.0-beta.9+6abff2f16e1c1314ba30708d1cf032a536de3d19",
+    "hash": "635316355797751349",
+    "abi": {
+        "parameters": [
+            {
+                "name": "private_voter_id",
+                "type": {
+                    "kind": "field"
+                },
+                "visibility": "private"
+            },
+            {
+                "name": "private_vote_choice",
+                "type": {
+                    "kind": "field"
+                },
+                "visibility": "private"
+            },
+            {
+                "name": "poll_unit",
+                "type": {
+                    "kind": "field"
+                },
+                "visibility": "public"
+            },
+            {
+                "name": "previous_records",
+                "type": {
+                    "kind": "struct",
+                    "path": "VoteRecords",
+                    "fields": [
+                        {
+                            "name": "voter_ids",
+                            "type": {
+                                "kind": "array",
+                                "length": 100,
+                                "type": {
+                                    "kind": "field"
+                                }
+                            }
+                        },
+                        {
+                            "name": "poll_units",
+                            "type": {
+                                "kind": "array",
+                                "length": 100,
+                                "type": {
+                                    "kind": "field"
+                                }
+                            }
+                        },
+                        {
+                            "name": "count",
+                            "type": {
+                                "kind": "integer",
+                                "sign": "unsigned",
+                                "width": 32
+                            }
+                        }
+                    ]
+                },
+                "visibility": "private"
+            }
+        ],
+        "return_type": {
+            "abi_type": {
+                "kind": "struct",
+                "path": "VoteRecords",
+                "fields": [
+                    {
+                        "name": "voter_ids",
+                        "type": {
+                            "kind": "array",
+                            "length": 100,
+                            "type": {
+                                "kind": "field"
+                            }
+                        }
+                    },
+                    {
+                        "name": "poll_units",
+                        "type": {
+                            "kind": "array",
+                            "length": 100,
+                            "type": {
+                                "kind": "field"
+                            }
+                        }
+                    },
+                    {
+                        "name": "count",
+                        "type": {
+                            "kind": "integer",
+                            "sign": "unsigned",
+                            "width": 32
+                        }
+                    }
+                ]
+            },
+            "visibility": "public"
+        },
+        "error_types": {
+            "4674613560121720917": {
+                "error_kind": "string",
+                "string": "Maximum voter limit reached"
+            },
+            "5019202896831570965": {
+                "error_kind": "string",
+                "string": "attempt to add with overflow"
+            },
+            "13579937923706979613": {
+                "error_kind": "string",
+                "string": "This voter has voted already"
+            },
+            "17262207620413297063": {
+                "error_kind": "string",
+                "string": "Invalid vote choice"
+            }
+        }
+    },
+    "bytecode": "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",
+    "debug_symbols": "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",
+    "file_map": {
+        "50": {
+            "source": "global MAX_VOTERS: u32 = 100;\nglobal VOTE_YES: Field =  1;\nglobal VOTE_NO: Field = 2;\n\nfn main(\n    private_voter_id: Field, \n    private_vote_choice: Field, \n    poll_unit: pub Field,\n    mut previous_records: VoteRecords,\n)-> pub VoteRecords{\n    let voter = Voter::new(private_voter_id, private_vote_choice, poll_unit);\n    process_vote(voter.voter_id, voter.vote_choice, voter.poll_unit, previous_records)\n}\n\nfn validate_vote_choice(vote_choice: Field) -> bool {\n    if vote_choice == VOTE_NO {\n        true\n    } else if vote_choice == VOTE_YES {\n        true\n    } else {\n        false\n    }\n}\n\nfn add_vote (voter:Voter, mut vote_records: VoteRecords)-> VoteRecords{\n    // Check if we've reached maximum voters\n    assert(vote_records.count < MAX_VOTERS, \"Maximum voter limit reached\");\n    \n    let mut has_voted = false;\n    for i in 0..MAX_VOTERS{\n        if vote_records.voter_ids[i] == voter.voter_id{\n            has_voted = true;\n        }\n    }\n    assert(!has_voted, \"This voter has voted already\");\n    vote_records.voter_ids[vote_records.count] = voter.voter_id;\n    vote_records.poll_units[vote_records.count] = voter.poll_unit;\n    vote_records.count += 1;\n    vote_records\n}\n\n// Voter id and vote choice can be the 2 different things, poll units can be the same\nstruct Voter {\n    voter_id: Field,\n    vote_choice: Field,\n    pub poll_unit: Field,\n}\n\nimpl Voter {\n    fn new(voter_id: Field, vote_choice: Field, poll_unit: Field,) -> Voter {\n        assert(validate_vote_choice(vote_choice), \"Invalid vote choice\");\n        Voter{\n            voter_id: voter_id,\n            vote_choice: vote_choice,\n            poll_unit: poll_unit\n        }\n    }\n}\n\nstruct VoteRecords {\n    voter_ids: [Field;MAX_VOTERS],\n    poll_units: [Field;MAX_VOTERS],\n    count: u32\n}\n\nimpl VoteRecords{\n    fn new()-> VoteRecords{\n        VoteRecords{\n            voter_ids: [0;MAX_VOTERS],\n            poll_units: [0;MAX_VOTERS],\n            count: 0\n        }\n    }\n}\n\nfn process_vote(voter_id: Field, vote_choice: Field, poll_unit: Field, mut vote_records: VoteRecords) -> VoteRecords{\n    let voter = Voter::new(voter_id, vote_choice, poll_unit);\n    add_vote(voter, vote_records)\n}\n\n#[test]\nfn test_double_voting() {\n    // THIS TEST IS SUPPOSED TO FAIL\n    let mut records = VoteRecords::new();\n    records = main(1, VOTE_NO, 12, records);\n    records = main(1, VOTE_NO, 12, records);\n}\n\n#[test]\nfn test_different_voters_voting() {\n    let mut records = VoteRecords::new();\n    records = main(1, VOTE_NO, 12, records);\n    records = main(2, VOTE_NO, 12, records);\n}\n\n#[test]\nfn test_max_voters_limit() {\n    let mut records = VoteRecords::new();\n    // Test adding exactly MAX_VOTERS votes (should succeed)\n    for i in 1..=MAX_VOTERS as u32{\n        records = main(i as Field, VOTE_YES, 12, records);\n    };\n    \n    // Try to add one more vote (should fail with maximum voter limit reached)\n    // This test will fail if the MAX_VOTERS check doesn't work\n    // UNCOMMENT TO FAIL\n    // records = process_vote((MAX_VOTERS + 1) as Field, VOTE_NO, 12, records);\n}\n\n",
+            "path": "/home/konquest/code_repo/noir_lang/private_voting/src/main.nr"
+        }
+    },
+    "names": [
+        "main"
+    ],
+    "brillig_names": [
+        "directive_invert",
+        "directive_integer_quotient"
+    ]
+}

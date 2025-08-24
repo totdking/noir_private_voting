@@ -1,0 +1,6 @@
+[package]
+name = "private_voting"
+type = "bin"
+authors = ["Konquest"]
+
+[dependencies]
